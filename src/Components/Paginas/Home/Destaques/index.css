@@ -1,0 +1,77 @@
+/* Container principal */
+.estilo-cards {
+     display: flex;                                    /*organa os cards em linha*/
+     flex-wrap: wrap;                                  /*permite que os cards quebrem para a próxima linha se não houver espaço suficiente*/
+     justify-content: center;                          /*centraliza os cards horizontalmente*/
+     align-items: center;                              /*centraliza os cards verticalmente*/
+
+     gap: 20px;                                        /*espaçamento entre os cards*/
+
+     margin-top: -5em;                                 /*ajuste para sobrepor os cards ao banner, criando um efeito de destaque*/
+     position: relative;                               /*permite que os cards sejam posicionados em relação ao container principal*/
+     z-index: 2;                                       /*garante que os cards fiquem acima de outros elementos, como o banner*/
+
+     padding: 0 15px;                                  /*o 0 remove a margem superior e inferior, enquanto os 15px adicionam um pouco de espaço nas laterais para evitar que os cards encostem nas bordas da tela em dispositivos menores*/
+}
+
+/* Cards */
+.card-servico {
+     width: clamp(100px, 14vw, 150px);                 /*clamp é uma função CSS que permite definir um valor flexível para a largura e altura dos cards, garantindo que eles se ajustem de forma responsiva em diferentes tamanhos de tela. O valor mínimo é 100px, o valor ideal é 14vw (14% da largura da viewport) e o valor máximo é 150px. Isso significa que os cards terão uma largura e altura que se adaptam ao tamanho da tela, mas não ficarão menores que 100px ou maiores que 150px.*/
+     height: clamp(100px, 14vw, 150px);                
+
+     border-radius: 10px;
+     border: none;
+     overflow: hidden;                                 /*garante que a imagem dentro do card não ultrapasse os limites do card, mantendo um design limpo e organizado*/
+
+     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);     /*adiciona uma sombra sutil para dar profundidade aos cards, tornando-os visualmente mais atraentes e destacando-os do fundo*/
+
+     transition: transform 0.3s ease,                  /*adiciona uma transição suave para a transformação de escala e a mudança de sombra quando o usuário interage com os cards, melhorando a experiência do usuário ao fornecer feedback visual imediato*/
+                 box-shadow 0.3s ease;                 /*adiciona uma transição suave para a mudança de sombra quando o usuário interage com os cards, melhorando a experiência do usuário ao fornecer feedback visual imediato*/
+
+     cursor: pointer;                                  /*indica que os cards são interativos, mudando o cursor para uma mãozinha quando o usuário passa o mouse sobre eles, incentivando a interação e tornando a navegação mais intuitiva*/
+}
+
+/* Hover */
+.card-servico:hover {                                  /*quando o usuário passa o mouse sobre um card, ele aumenta de tamanho e a sombra se torna mais pronunciada, criando um efeito de destaque que chama a atenção para o card e melhora a experiência do usuário ao fornecer feedback visual imediato sobre a interatividade do elemento. Esse efeito torna os cards mais atraentes e incentiva os usuários a clicarem neles para obter mais informações ou realizar uma ação relacionada ao serviço destacado.*/
+     transform: scale(1.08);                           /*aumenta o tamanho do card em 8% quando o usuário passa o mouse sobre ele, criando um efeito de destaque que chama a atenção para o card e melhora a experiência do usuário ao fornecer feedback visual imediato sobre a interatividade do elemento. Esse efeito torna os cards mais atraentes e incentiva os usuários a clicarem neles para obter mais informações ou realizar uma ação relacionada ao serviço destacado.*/
+     box-shadow: 2px 4px 12px rgba(0, 0, 0, 0.18);   /*aumenta a intensidade da sombra quando o usuário passa o mouse sobre o card, criando um efeito de destaque que chama a atenção para o card e melhora a experiência do usuário ao fornecer feedback visual imediato sobre a interatividade do elemento. Esse efeito torna os cards mais atraentes e incentiva os usuários a clicarem neles para obter mais informações ou realizar uma ação relacionada ao serviço destacado.*/
+}
+
+/* Imagem */
+.img-servico {
+     width: 100%;
+     height: 100%;
+     object-fit: cover;                                /*garante que a imagem preencha completamente o card, mantendo suas proporções e evitando distorções, o que contribui para um design visualmente agradável e profissional dos cards de serviço.*/
+}
+
+/* Ajuste para telas abaixo de 770px */
+@media (max-width: 770px) {
+
+     .estilo-cards {
+          margin-top: 1em;
+          gap: 15px;
+     }
+
+     .card-servico {
+          width: 120px;
+          height: 120px;
+     }
+}
+
+/* Ajuste para celular */
+@media (max-width: 480px) {
+
+     .estilo-cards {
+          margin-top: 1em;
+          gap: 10px;
+     }
+
+     .card-servico {
+          width: 90px;
+          height: 90px;
+     }
+
+     .card-servico:hover {
+          transform: none;
+     }
+}

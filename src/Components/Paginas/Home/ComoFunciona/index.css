@@ -1,0 +1,85 @@
+/* Container principal da seção */
+.container {
+  width: 100%;
+  max-width: 1400px; /* aumentei para telas grandes */
+  margin: 50px auto 0;
+  padding: 60px 30px;
+  text-align: center;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Título da seção */
+.titulo-sessao {
+  font-size: 3.5rem; /* maior para desktop */
+  font-weight: bold;
+  margin-bottom: 60px;
+}
+
+/* Caixa das colunas */
+.caixa-colunas {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); /* colunas mais largas */
+  gap: 60px;
+  width: 100%;
+}
+
+/* Cada coluna */
+.coluna {
+  text-align: center;
+  padding: 20px; /* mais respiro */
+}
+
+/* Título das colunas */
+.coluna h3 {
+  font-size: 2.2rem;
+  margin-bottom: 20px;
+}
+
+/* Texto das colunas */
+.coluna p {
+  font-size: 1.2rem;
+  line-height: 1.8;
+}
+
+/* Responsividade tablet */
+@media (max-width: 768px) {
+  .titulo-sessao {
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+  }
+
+  .caixa-colunas {
+    gap: 40px;
+  }
+
+  .coluna h3 {
+    font-size: 1.6rem;
+  }
+
+  .coluna p {
+    font-size: 1.05rem;
+  }
+}
+
+/* Responsividade mobile */
+@media (max-width: 480px) {
+  .container {
+    padding: 30px 15px;
+  }
+
+  .titulo-sessao {
+    font-size: 2rem;
+    margin-bottom: 30px;
+  }
+
+  .coluna h3 {
+    font-size: 1.4rem;
+  }
+
+  .coluna p {
+    font-size: 1rem;
+  }
+}
