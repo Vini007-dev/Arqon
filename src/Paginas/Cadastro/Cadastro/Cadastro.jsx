@@ -1,9 +1,10 @@
-import "./Login.css";
-import eletricista from "../../../../assets/eletricista.png";
+import "./Cadastro.css";
+import eletricista from "../../../assets/eletricista.png";
 import { Link } from "react-router-dom";
 
 
-function Login() {
+
+function Cadastro() {
   return (
     <div className="login-container">
       <div className="login-wrapper">
@@ -30,10 +31,20 @@ function Login() {
         {/* Lado direito */}
         <div className="login-form">
           <div className="login-card">
-            <h2>FAZER LOGIN</h2>
+            <h2>CRIAR CADASTRO</h2>
 
             <form>
-      
+              <div className="form-row">
+                <div className="form-group">
+                  <label htmlFor="firstName">Nome</label>
+                  <input type="text" id="firstName" placeholder="Primeiro nome" />
+                </div>
+
+                <div className="form-group">
+                  <label htmlFor="lastName">Sobrenome</label>
+                  <input type="text" id="lastName" placeholder="Sobrenome" />
+                </div>
+              </div>
 
               <div className="form-group">
                 <label htmlFor="email">Email</label>
@@ -44,19 +55,34 @@ function Login() {
                 />
               </div>
 
+
+              
+
+              <div className="form-group">
+                <label htmlFor="cpf">Cpf</label>
+                <input
+                  type="text"
+                  id="cpf"
+                  placeholder="000.000.000-00"
+                />
+              </div>
+
               <div className="form-group">
                 <label htmlFor="password">Comfirma a senha</label>
                 <input type="password" id="password" placeholder="********" />
               </div>
 
-              
+              <div className="form-group">
+                <label htmlFor="password2">Confirma a senha</label>
+                <input type="password" id="password2" placeholder="********" />
+              </div>
 
               <button type="submit" className="btn-signup">
-                ENTRAR
+                Criar Conta
               </button>
 
-              <p className="texto-cadastro">
-                Nao possui uma conta? <Link to="/cadastro">Cadastrar</Link>
+              <p className="texto-login">
+                Já possui uma conta? <Link to="/login">Login</Link>
               </p>
 
             </form>
@@ -67,4 +93,4 @@ function Login() {
   );
 }
 
-export default Login;
+export default Cadastro;
