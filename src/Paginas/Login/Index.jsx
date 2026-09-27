@@ -1,6 +1,6 @@
 import Login from "./Login/Login";
 import Footer from "../../Components/Footer";
-import Navbar from "../../Components/Navbar/Navbar";
+import Navbar from "../../Components/Navbar";
 
 function PaginaLogin() {
   return (

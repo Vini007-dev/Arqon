@@ -1,0 +1,97 @@
+/* Container que abraça tudo */
+.secao-diferenciais {
+  padding: 60px 20px;               /* espaçamento generoso em cima e embaixo, e um pouco nas laterais */
+  font-family: Arial, sans-serif;   /* fonte limpa e moderna */
+}
+
+/* O título grandão */
+.titulo-secao {
+  max-width: 1100px;                 /* limita a largura do título pra não ficar muito esticado em telas grandes */
+  margin: 0 auto 40px auto;          /* centraliza o título e dá um espaçamento embaixo */
+  font-size: 26px;                   /* um tamanho grande pra chamar atenção */
+  font-weight: bold;                 /* deixa o título em negrito pra destacar ainda mais */
+  color: #1a1a1a; 
+  text-align: center;
+}
+
+/* A caixa que segura os 4 cards */
+.grade-cards {
+  display: flex;                      /* usa flexbox pra organizar os cards em linha */
+  justify-content: center;            /* centraliza os cards horizontalmente */
+  gap: 20px;                          /* espaço entre os cards */
+  flex-wrap: wrap;                    /* essencial pro celular */
+  max-width: 1200px;                  /* limita a largura total da grade pra não ficar muito esticada em telas grandes */ 
+  margin: 0 auto;                     /* centraliza a grade dentro da seção */
+}
+
+/* O quadrado branco (Card) */
+.card-item {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 30px 20px;                 /* espaçamento interno generoso pra dar um respiro pro conteúdo */
+  flex: 1;                            /* faz os cards crescerem igualmente pra preencher a linha */
+  min-width: 250px;                   /* garante que os cards não fiquem muito pequenos em telas menores */
+  max-width: 280px;                   /* limita a largura dos cards pra não ficarem muito largos em telas grandes */
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.card-imagem {
+  width: 150px;
+  height: 150px;
+  flex: 0 0 150px;
+
+  margin: 0 auto 20px;
+
+  overflow: hidden;
+  border-radius: 5%;
+  position: relative;
+}
+
+.card-imagem img {
+  display: block;
+
+  width: 100%;
+  height: 100%;
+
+  max-width: none;
+  margin: 0;
+  padding: 0;
+
+  object-fit: cover;
+  object-position: center;
+
+}
+
+
+/* O título que fica DENTRO do card */
+.card-titulo {
+  font-size: 18px;
+  color: #1a1a1a;
+  margin-bottom: 12px;
+  margin-top: 0;
+}
+
+/* O texto cinza que fica DENTRO do card */
+.card-descricao {
+  font-size: 14px;
+  color: #666666;
+  line-height: 1.5;                  /* deixa o texto mais fácil de ler com um espaçamento entre as linhas */
+  margin: 0;
+}
+
+@media (max-width: 768px) {          /* Estilos para telas menores, como celulares */
+  .titulo-secao {
+    font-size: 22px;                 /* reduz um pouco o tamanho do título no celular */
+  }
+
+  .grade-cards {
+    flex-direction: column;           /* empilha os cards verticalmente no celular */
+    align-items: center;              /* centraliza os cards na vertical */
+  }
+
+  .card-item {
+    max-width: none;                 /* remove a limitação de largura pra ocupar toda a largura disponível no celular */
+    width: 100%;                     /* faz os cards ocuparem toda a largura da tela no celular */
+  }
+}

@@ -28,8 +28,8 @@ function Hero() {
               - h1: O slogan principal da seção (Título de destaque). A tag <br /> quebra a linha do texto.
               - p: Um parágrafo de texto secundário que descreve brevemente o propósito do site. */}
           <h1 className="titulo-hero">
-            “Profissionais confiáveis <br />
-            para cuidar do seu lar.”
+            Profissionais confiáveis <br />
+            para cuidar do seu lar.
           </h1>
           <p className="subtitulo-hero">
             Encontre especialistas verificados para qualquer serviço,
@@ -49,7 +49,6 @@ function Hero() {
               Buscar profissionais
             </button>
           </div>
-
         </div>
       </div>
     </>

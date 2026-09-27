@@ -1,5 +1,5 @@
 import Footer from "../../Components/Footer";
-import Navbar from "../../Components/Navbar/Navbar";
+import Navbar from "../../Components/Navbar";
 import Sobre from "./Sobre/Sobre";
 
 function PaginaSobre() {

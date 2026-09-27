@@ -1,0 +1,198 @@
+/* ==========================================================================
+   Seção Hero - Estilos Principais (Organizados por Classe/Componente)
+   ========================================================================== */
+
+/* 
+   1. CONTÊINER PAI DA SEÇÃO (.secao-hero)
+   Este bloco define a estrutura do topo e o espaçamento em relação ao menu.
+   - Usamos 'position: relative' para que a caixa de textos (filho) consiga flutuar sobre ele.
+   - Usamos 'display: flex' e 'justify-content: center' para deixar a imagem de fundo centralizada.
+ */
+.secao-pesquisar {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 100px;
+  margin-bottom: 90px;
+  padding: 0 15px;
+}
+
+
+/* 
+   3. CAIXA DE TEXTOS E CONTEÚDO (.conteudo-pesquisar)
+   Este bloco organiza o título, o subtítulo e a busca por cima da imagem.
+   - 'position: absolute' e 'translate' colocam e centralizam toda a caixa no meio da imagem.
+   - 'flex-direction: column' e 'align-items: flex-start' organizam os textos um abaixo do outro, alinhados à esquerda.
+ */
+.conteudo-pesquisar {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90%;
+  max-width: 1100px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+/* 
+   4. TÍTULO PRINCIPAL (SLOGAN) (.titulo-pesquisar)
+   Aplica os estilos tipográficos e o peso ao texto principal.
+   - A cor branca dá destaque sobre o fundo escuro da imagem.
+   - O tamanho é fluido/dinâmico com 'clamp', crescendo ou diminuindo conforme o tamanho do monitor.
+   - 'line-height: 1.1' deixa as linhas do título ligeiramente próximas para um estilo moderno.
+ */
+.titulo-pesquisar {
+  color: #1a1a2e;
+  font-family: "Poppins", sans-serif;
+  font-weight: 800;
+  font-size: clamp(2rem, 5vw, 4rem);
+  line-height: 1.1;
+  letter-spacing: 1px;
+  margin-bottom: 20px;
+}
+
+
+/* 
+   6. CONTÊINER DA BUSCA (.busca-pesquisar)
+   Organiza o campo de busca (input) e o botão (button) lado a lado na horizontal.
+   - O 'gap: 15px' cria um espaçamento uniforme entre os dois elementos.
+ */
+.busca-pesquisar {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+/* 
+   7. CAMPO DE DIGITAÇÃO (.entrada-pesquisar)
+   Aplica os estilos visuais do campo de texto com efeito "Glassmorphism" (vidro fosco).
+   - 'flex: 1' faz o campo se expandir para ocupar toda a largura livre restante na barra.
+   - 'border-radius' e padding dão conforto ao clique e à digitação.
+   - O fundo semi-transparente e o 'backdrop-filter: blur' dão o visual moderno de vidro.
+   - 'outline: none' remove a borda azul padrão que os navegadores mostram ao focar no campo.
+ */
+.entrada-pesquisar {
+  flex: 1;
+  padding: 16px;
+  border-radius: 20px;
+  border: 1px solid rgba(0, 0, 0, 0.4);
+  background-color: rgba(128, 128, 128, 0.705);
+  color: rgb(0, 0, 0);
+  outline: none;
+  backdrop-filter: blur(5px);
+}
+
+/* 
+   8. TEXTO DE MARCAÇÃO DENTRO DO INPUT (.entrada-pesquisar::placeholder)
+   Aplica uma cor branca semi-transparente (70% de opacidade) ao texto initial de dica.
+ */
+.entrada-pesquisar::placeholder {
+  color: rgba(0, 0, 0, 0.7);
+}
+
+/* 
+   9. BOTÃO DE BUSCA (.botao-pesquisar)
+   Estiliza o botão laranja e define o efeito visual ao passar o mouse.
+   - A cor de fundo laranja e o texto preto dão forte contraste e chamam a atenção do clique.
+   - 'transition: 0.3s' faz as animações do botão (como no hover) ocorrerem de forma suave.
+   - No estado ':hover', reuniamos levemente a opacidade para simular um feedback visual de clique.
+ */
+.botao-pesquisar {
+  padding: 14px 24px;
+  border-radius: 20px;
+  background-color: #ffa500;
+  color: black;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  white-space: nowrap;
+  transition: 0.3s;
+}
+
+.botao-pesquisar:hover {
+  opacity: 0.9;
+}
+
+/* ==========================================================================
+   Responsividade - Ajustando o design para telas menores (Media Queries)
+   ========================================================================== */
+
+/* 
+   A. AJUSTE PARA TABLETS (Telas com largura máxima de 992px)
+   - Ajusta a altura da imagem de fundo para preencher melhor a proporção da tela.
+   - Deixa as margens do bloco de conteúdo ligeiramente maiores nas laterais (width: 88%).
+ */
+@media (max-width: 992px) {
+  .imagem-pesquisar {
+    height: 500px;
+  }
+
+  .conteudo-pesquisar {
+    width: 88%;
+  }
+}
+
+/* 
+   B. AJUSTE PARA CELULARES COMUNS (Telas com largura máxima de 768px)
+   - Diminui a margem do topo e reduz a altura do banner para 300px.
+   - Centraliza verticalmente e alinha todos os textos no meio do banner.
+   - Modifica a busca para empilhar o input e o botão verticalmente (em coluna).
+   - Faz o input ocupar toda a largura e limita o botão a 50% de largura por estética.
+ */
+@media (max-width: 768px) {
+  .secao-pesquisar {
+    margin-top: 10px;
+  }
+
+  .imagem-pesquisar {
+    height: 300px;
+    border-radius: 20px;
+  }
+
+  .conteudo-pesquisar   {
+    width: 90%;
+    align-items: center;
+    text-align: center;
+  }
+
+  .busca-pesquisar {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .entrada-pesquisar {
+    width: 100%;
+  }
+
+  .botao-pesquisar {
+    width: 50%;
+  }
+}
+
+/* 
+   C. AJUSTE PARA CELULARES PEQUENOS (Telas com largura máxima de 480px)
+   - Reduz o espaçamento abaixo do título e subtítulo para encaixar na tela menor sem rolar.
+   - Diminui um pouco o padding interno do input e do botão para telas muito estreitas.
+ */
+@media (max-width: 480px) {
+  .imagem-pesquisar {
+    height: 300px;
+  }
+
+  .titulo-pesquisar {
+    margin-bottom: 15px;
+  }
+
+  .subtitulo-pesquisar {
+    margin-bottom: 25px;
+  }
+
+  .entrada-pesquisar,
+  .botao-pesquisar {
+    padding: 14px;
+  }
+}
