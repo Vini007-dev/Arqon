@@ -1,9 +1,9 @@
 /* ==========================================================================
-   Seção Hero - Estilos Principais (Organizados por Classe/Componente)
+   Seção Pesquisar - Estilos Principais (Organizados por Classe/Componente)
    ========================================================================== */
 
 /* 
-   1. CONTÊINER PAI DA SEÇÃO (.secao-hero)
+   1. CONTÊINER PAI DA SEÇÃO (.secao-pesquisar)
    Este bloco define a estrutura do topo e o espaçamento em relação ao menu.
    - Usamos 'position: relative' para que a caixa de textos (filho) consiga flutuar sobre ele.
    - Usamos 'display: flex' e 'justify-content: center' para deixar a imagem de fundo centralizada.
@@ -127,12 +127,13 @@
    - Deixa as margens do bloco de conteúdo ligeiramente maiores nas laterais (width: 88%).
  */
 @media (max-width: 992px) {
-  .imagem-pesquisar {
-    height: 500px;
-  }
 
   .conteudo-pesquisar {
     width: 88%;
+  }
+
+  .titulo-pesquisar {
+    font-size: larger; /* aumenta o tamanho do título para melhor visibilidade em telas menores */
   }
 }
 
@@ -148,11 +149,11 @@
     margin-top: 10px;
   }
 
-  .imagem-pesquisar {
-    height: 300px;
-    border-radius: 20px;
-  }
+    .titulo-pesquisar {
+    font-size: medium; 
+    margin-top: 150px;
 
+  }
   .conteudo-pesquisar   {
     width: 90%;
     align-items: center;
@@ -170,6 +171,8 @@
 
   .botao-pesquisar {
     width: 50%;
+    margin-bottom: 25px;
+
   }
 }
 
@@ -179,20 +182,32 @@
    - Diminui um pouco o padding interno do input e do botão para telas muito estreitas.
  */
 @media (max-width: 480px) {
-  .imagem-pesquisar {
-    height: 300px;
-  }
 
-  .titulo-pesquisar {
+    .titulo-pesquisar {
+    font-size: small; 
+    margin-top: 150px;
     margin-bottom: 15px;
+
   }
 
-  .subtitulo-pesquisar {
-    margin-bottom: 25px;
-  }
 
   .entrada-pesquisar,
   .botao-pesquisar {
     padding: 14px;
+  }
+}
+
+@media (max-width: 360px) {
+  .titulo-pesquisar {
+    font-size: small; 
+    margin-top: 150px;
+  }
+
+  .entrada-pesquisar,
+  .botao-pesquisar {
+  width: 100%;
+  }
+    .botao-pesquisar {
+  margin-bottom: 20px;
   }
 }
